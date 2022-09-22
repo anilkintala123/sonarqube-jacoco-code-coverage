@@ -234,7 +234,8 @@ pipeline {
     stage('Code Build') {
       steps {
         container('build') {
-          sh "/usr/bin/gradlew clean build"
+          checkout scm
+          sh "./gradlew clean build"
         }
       }
     }
