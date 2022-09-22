@@ -237,7 +237,6 @@ pipeline {
           checkout scm
           sh 'echo "BEFORE CODE BUILD"'
           sh "./gradlew build"
-          sh 'echo "AFTER CODE BUILD"'
         }
       }
     }
@@ -247,6 +246,7 @@ pipeline {
       steps {
         script{
                container('podman') {
+               sh "echo 'inside podman"
                podmanBuild("jed.ocir.io", "axssefozft8h", "${projectName}", "${tag}", "${imagetype}")
                }
             }
