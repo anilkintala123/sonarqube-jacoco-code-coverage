@@ -236,7 +236,7 @@ pipeline {
         container('build') {
           checkout scm
           sh 'echo "BEFORE CODE BUILD"'
-          sh "./gradlew clean build"
+          sh "./gradlew build"
           sh 'echo "AFTER CODE BUILD"'
         }
       }
