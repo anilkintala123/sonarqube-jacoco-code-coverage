@@ -246,7 +246,7 @@ pipeline {
       steps {
         script{
                container('podman') {
-               sh "echo 'inside podman"
+               sh "echo 'inside podman'"
                podmanBuild("jed.ocir.io", "axssefozft8h", "${projectName}", "${tag}", "${imagetype}")
                }
             }
